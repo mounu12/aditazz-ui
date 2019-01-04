@@ -12,4 +12,20 @@ tr.mat-footer-row {
         background-color: #fdfdfd;
         cursor: pointer;
     }
+    .output-section {
+        table{
+            td{
+                border: 0px
+            }
+        }
+        button {
+            padding: 0;
+            border: 0px;
+            background: transparent;
+            cursor: pointer;
+            img {
+                width: 20px;
+            }
+        }
+    }
 }

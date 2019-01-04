@@ -65,10 +65,23 @@
     </ng-container>
     <ng-container matColumnDef="OutputFiles">
         <th mat-header-cell *matHeaderCellDef> Output Files </th>
-        <td mat-cell *matCellDef="let element"> 
-            <button (click)="showAlert(element.updatedLib)">updatedLibrary</button>
-            <button (click)="showAlert(element.pfdObject)">pdfJson</button>
-            <button (click)="showAlert(element.planObject)">planJson</button>
+        <td mat-cell *matCellDef="let element" class="output-section"> 
+            <table>
+                <tr>
+            <td>
+            <button matTooltip="Update Library" (click)="showUpdatedLibrary(element.updatedLib)"><img src="../../../../assets/images/update-library.svg"/></button>
+
+            </td>
+                    <td>
+            <button matTooltip="Pfd Json" (click)="showPfdJson(element.pfdObject)"><img src="../../../../assets/images/json-pdf.svg"/></button>
+
+                    </td>
+                    <td>
+            <button matTooltip="Plan Json" (click)="showPlanJson(element.planObject)"><img src="../../../../assets/images/json.svg"/></button>
+
+                    </td>
+                </tr>
+            </table>
          </td>
         <td mat-footer-cell *matFooterCellDef>  </td>
     </ng-container>

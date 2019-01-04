@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   nodedata: any[];
   dialogueRef: MatDialogRef<ConfimationDialogComponent>;
   private stompClient = null;
+  username:any = "u"+(Math.random()*6)+1;
   greetings: string[] = [];
   constructor(private testService : TestService, public dialog: MatDialog, private spinner: NgxSpinnerService) { }
   
@@ -44,6 +45,7 @@ export class DashboardComponent implements OnInit {
   postNodeValue(testnodes): void{
     // this.spinner.show();
     this.tabGroup.selectedIndex = 1;
+    testnodes.userName = this.username;
     this.testService.postTestValues(testnodes).subscribe((data: any) => {
       this.nodedata= data.results;
       console.log(this.nodedata);
