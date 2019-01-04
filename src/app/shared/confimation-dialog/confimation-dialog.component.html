@@ -1,0 +1,12 @@
+<div mat-dialog-content class="custom-width-modal success-modal">
+    <div class="modal-body  pull-left">
+        <div style="padding-top:18px">
+            Success! Your run was completed
+        </div>
+    </div>
+    <div class="modal-footer pull-right flex">
+        <button type="button" (click)="dispatchViewTableEvent()" class="modal-btn">VIEW OUTPUT TABLE </button>
+        <div class="partetion"></div>
+        <button (click)="onNoClick()" tabindex="-1" class="modal-btn">CLOSE </button>
+    </div>
+</div>

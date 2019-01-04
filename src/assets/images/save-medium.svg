@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>192B179E-0607-46B3-A494-BB9CCB68FABE</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Equivalency-Checker" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Base-Screen" transform="translate(-1296.000000, -188.000000)" stroke="#A6B1B9">
+            <g id="Top-Line-Text" transform="translate(98.000000, 188.000000)">
+                <g id="Icons/A/Save-Medium-Disabled" transform="translate(1199.000000, 1.000000)">
+                    <path d="M1.05959761,0 L9.55416522,1.33226763e-15 C9.81848832,1.75324441e-15 10.0720604,0.1046502 10.2594464,0.291072305 L12.7052812,2.72432638 C12.893934,2.91200883 13,3.16714397 13,3.43325408 L13,12 C13,12.5522847 12.5522847,13 12,13 L1,13 C0.44771525,13 2.16007656e-11,12.5522847 2.16009433e-11,12 C2.16009438e-11,11.998194 4.89232251e-06,11.9963881 1.46768705e-05,11.9945821 L0.0596122911,0.994582115 C0.0625930497,0.444420081 0.509427506,-1.20979996e-16 1.05959761,-2.22044605e-16 Z" id="Path-13"></path>
+                    <path d="M3.25,8.65402231 L3.25,12 C3.25,12.5522847 3.69771525,13 4.25,13 L8.75,13 C9.30228475,13 9.75,12.5522847 9.75,12 L9.75,8.53125" id="Path-14" transform="translate(6.500000, 10.765625) rotate(180.000000) translate(-6.500000, -10.765625) "></path>
+                    <path d="M3.25,0.100450073 L3.25,2.65625 C3.25,3.20853475 3.69771525,3.65625 4.25,3.65625 L7.734375,3.65625 C8.28665975,3.65625 8.734375,3.20853475 8.734375,2.65625 L8.734375,0" id="Path-14"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<!-- <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" color="#2867FA" type="ball-clip-rotate">
+    <p style="font-size: 20px; color: #2867FA">Loading...</p>
+</ngx-spinner> -->
+<div class="body-container">
+    <div class="container-box form-section">
+        <div class="tab-icons">
+            <img src="../../../assets/images/trigger-vertical-medium.svg" />
+            <img src="../../../assets/images/search-medium.svg" />
+            <img src="../../../assets/images/save-medium.svg" />
+        </div>
+        <mat-tab-group>
+            <mat-tab label="Inputs" #tab [disabled]='!tab.isActive'>
+                <app-input-dump (postNodeValues)="postNodeValue($event)"></app-input-dump>
+            </mat-tab>
+            <mat-tab label="Tables" #tab [disabled]='!tab.isActive'>
+                <app-table-dump [testdata]="nodedata" (emitTabChangeEvent)="dispatchTabChangeEvent($event)"></app-table-dump>
+            </mat-tab>
+            <mat-tab label="Graphs" #tab [disabled]='!tab.isActive'> Content 3 </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

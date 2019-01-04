@@ -1,0 +1,34 @@
+<!-- Starter application -->
+<mat-sidenav-container id="container" fullscreen>
+    <div class="header">
+        <div class="logo-set pull-left">
+            <div class="logo">
+                <img src="../../../assets/images/aditazzlogo.png" />
+            </div>
+            <div class="header-name">
+                <img src="../../../assets/images/projects-active.png" class="mr10" />
+                <div class="mt5"> Projects</div>
+            </div>
+        </div>
+
+        <div class="login-set pull-right">
+            <div class="login-txt">Aditazz / Client Confidential</div>
+            <div class="login-img"><img src="../../../assets/images/User.png" /></div>
+
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="main-container-l">
+
+        </div>
+        <mat-sidenav-content class="main-container-c">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+        <div class="main-container-r">
+            <div class="right-bar-links">
+                <img src="../../../assets/images/revision-history.svg" />
+                <img src="../../../assets/images/download.svg" />
+            </div>
+        </div>
+    </div>
+</mat-sidenav-container>

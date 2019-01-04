@@ -1,0 +1,267 @@
+/* You can add global styles to this file, and also import other style files */
+
+@charset "utf-8";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import 'assets/css/variables';
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: $white;
+    margin: 0;
+    background-color: #fafbfc;
+    font-weight: 400!important;
+}
+
+.mat-tab-label-active {
+    color: $blue!important;
+}
+
+.mat-tab-label {
+    opacity: 1!important;
+}
+
+.mat-tab-body-content {
+    height: calc(100vh - 370px)!important;
+    overflow: auto;
+    padding: 45px 35px;
+    position: relative;
+}
+
+.mat-form-field-infix {
+    border-top: 0 solid transparent;
+}
+
+.flex-items {
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        height: 0px!important;
+    }
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-end {
+        border-radius: 0!important;
+        border-width: 1px!important;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin: 0!important;
+    }
+    .mat-form-field-wrapper {
+        padding-bottom: 0!important;
+    }
+    .mat-select {
+        border: 0.5px solid $input-border!important;
+        padding: 15px 0;
+        background-color: $input-backgroun;
+        height: 10px;
+    }
+    .mat-select-trigger {
+        margin: 0 15px;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-ripple {
+        height: 0!important;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-outline-end,
+    .mat-form-field-appearance-outline .mat-form-field-outline-start {
+        border: 1px solid $input-border;
+        min-width: 5px;
+        background: $input-backgroun;
+    }
+    .mat-form-field-outline-start {
+        display: none
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 16px 0;
+        height: 12px;
+    }
+}
+
+.adi-btn {
+    background-color: $blue;
+    border-radius: 50px;
+    border: 1px solid $blue;
+    padding: 7px 18px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+        background-color: rgb(27, 83, 214);
+    }
+    &:focus {
+        outline: none
+    }
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: $blue;
+    height: 1px;
+}
+
+.adi-table {
+    border: 1px solid #eef0f2;
+    border-collapse: collapse;
+    font-size: 12px;
+    th.mat-header-cell {
+        width: 8.333333333333333%;
+        text-align: center !important;
+        padding: 13px 10px;
+        opacity: 1;
+        color: #000;
+        background-color: $table-color;
+        border: 1px solid #e1e3e5;
+        font-weight: 500;
+    }
+    td {
+        background-color: #f9fafb;
+        text-align: center !important;
+        border: 1px solid #eef0f2;
+        padding: 5px 0!important;
+        font-size: 12px;
+    }
+    tfoot {
+        td {
+            background-color: $table-color;
+            border: 1px solid #e1e3e5;
+        }
+    }
+}
+
+
+/* Other Basic CSS */
+
+::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 50px
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: $table-color;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: $table-color;
+}
+
+.pull-left {
+    margin-right: auto;
+}
+
+.pull-right {
+    margin-left: auto;
+}
+
+.mr10 {
+    margin-right: 10px
+}
+
+.mt5 {
+    margin-top: 5px
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-50 {
+    flex: 50%;
+}
+
+.pl-15 {
+    padding-left: 15px;
+}
+
+.pr-15 {
+    padding-right: 15px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.text-center {
+    text-align: center
+}
+
+.pt100 {
+    padding-top: 100px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0!important;
+}
+
+.mat-dialog-container {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 2px!important;
+    color: #fff;
+    padding: 0!important;
+}
+
+.success-modal {
+    background-color: #2867FA;
+    padding: 10px 24px!important;
+    .partetion {
+        border-right: 1px solid #5B8BFB;
+    }
+}
+
+.error-modal {
+    background-color: #FF4C4E;
+    padding: 10px 24px!important;
+    .partetion {
+        border-right: 1px solid #FF8082;
+    }
+}
+
+.mat-dialog-content {
+    display: flex !important;
+    margin: 0!important;
+}
+
+.modal-btn {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    &:focus {
+        outline: none
+    }
+}
+
+.partetion {
+    width: 1px;
+    display: flex;
+    margin-right: 20px;
+    padding: 30px 10px;
+}
+
+.btn-pos-abs {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.black-overlay {
+    background-color: #fff!important;
+    opacity: 0.5;
+}
+
+.error-msg-t {
+    padding-top: 18px;
+    img {
+        margin-right: 14px
+    }
+}
+
+.mat-raised-button[disabled][disabled] {
+    border:1px solid rgba(0,0,0,.12);
+}
+
+.mandatory{
+    color: rgb(211, 11, 11);
+}

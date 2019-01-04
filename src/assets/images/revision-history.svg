@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="21px" viewBox="0 0 18 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>0C3AA40F-8096-4C65-8E73-EFA133DFA75E</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Equivalency-Checker" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Base-Screen" transform="translate(-1400.000000, -95.000000)">
+            <g id="Right-Side-Tools" transform="translate(1377.000000, 59.000000)">
+                <g id="Icons/A/Revision-History-Disabled" transform="translate(24.000000, 36.000000)">
+                    <path d="M1.87249696,6.35639652 C0.703884643,7.74709197 0,9.54134545 0,11.5 C0,15.918278 3.581722,19.5 8,19.5 C12.418278,19.5 16,15.918278 16,11.5 C16,7.081722 12.418278,3.5 8,3.5" id="Oval-10" stroke="#A6B1B9" stroke-width="1.25" stroke-linecap="round"></path>
+                    <polygon id="Triangle" fill="#A6B1B9" fill-rule="evenodd" transform="translate(7.000000, 3.500000) rotate(-90.000000) translate(-7.000000, -3.500000) " points="7 1 10.5 6 3.5 6"></polygon>
+                    <path d="M8.5,9.5 L8.5,13.5" id="Line" stroke="#A6B1B9" stroke-width="1.55" stroke-linecap="round"></path>
+                    <path d="M8.5,13.5 L6,13.5" id="Line" stroke="#A6B1B9" stroke-width="1.55" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

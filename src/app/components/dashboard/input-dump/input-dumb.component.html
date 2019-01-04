@@ -1,0 +1,51 @@
+<form #CreateTestForm="ngForm" (keydown.enter)="$event.preventDefault()">
+<div class="flex mb-50 flex-items">
+    <div class="flex-50 pr-15">
+        <label>URL of Test Application</label>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="testnodes.url" name="testUrl" #url="ngModel">
+        </mat-form-field>
+    </div>
+    <div class="flex-50 pl-15">
+        <label>Project Name</label>
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="testnodes.projectName" name="projectname" #projectName="ngModel">
+        </mat-form-field>
+    </div>
+</div>
+<div class="flex flex-items">
+    <mat-form-field class="pr-15">
+        <label>Starting Number of Nodes <span class="mandatory">*</span></label>
+        <mat-select [(ngModel)]="testnodes.minNodes" name="minNodes" id="minnodes" #minNodes="ngModel" required>
+            <mat-option *ngFor="let startvalue of numberOfNodes" [value]="startvalue">{{startvalue}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="pl-15 pr-15">
+        <label>Max No.of Nodes <span class="mandatory">*</span></label>
+        <mat-select [(ngModel)]="testnodes.maxNodes" name="maxNodes" id="maxnodes" #maxNodes="ngModel" required>
+            <mat-option *ngFor="let maxvalue of maximumnodes" [value]="maxvalue">{{maxvalue}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="pl-15 pr-15">
+        <label>Node Increment Step Size <span class="mandatory">*</span></label>
+        <mat-select [(ngModel)]="testnodes.incrementSize" name="incrementsize" id="incrementsize" #incrementSize="ngModel" required>
+            <mat-option *ngFor="let increasevalue of incrementsize" [value]="increasevalue">{{increasevalue}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="pl-15 pr-15">
+        <label>Optimization Time Limit (Min)</label>
+        <mat-select [(ngModel)]="testnodes.iterationTimeLimit" name="iterationtime" id="iterationtime" #iterationTimeLimit="ngModel">
+            <mat-option *ngFor="let opttime of optimizationLimit" [value]="opttime">{{opttime}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="pl-15">
+        <label>Overall Run Time(Min)</label>
+        <mat-select [(ngModel)]="testnodes.overAllTimeLimit" name="overalltime" id="overalltime" #overAllTimeLimit="ngModel">
+            <mat-option *ngFor="let overtime of overalltime" [value]="overtime">{{overtime}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+</form>
+<div class="text-center btn-pos-abs">
+    <button (click)="runNewTest()" class="mat-raised-button adi-btn" [disabled]="!CreateTestForm.form.valid">Run New Test</button>
+</div>

@@ -1,0 +1,12 @@
+<div mat-dialog-content class="custom-width-modal error-modal">
+    <div class="modal-body  pull-left">
+        <div class="flex error-msg-t">
+            <img src="../../../assets/images/error-exla.svg" /> There was an error completing the test
+        </div>
+    </div>
+    <div class="modal-footer pull-right flex">
+        <button type="button" (click)="dispatchTryAgainEvent(true)" class="modal-btn">TRY AGAIN </button>
+        <div class="partetion"></div>
+        <button (click)="onNoClick()" tabindex="-1" class="modal-btn">CLOSE </button>
+    </div>
+</div>
