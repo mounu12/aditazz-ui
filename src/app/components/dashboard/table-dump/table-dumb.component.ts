@@ -5,8 +5,6 @@ import { BehaviorSubject } from 'rxjs'
 import  TableModel from 'src/app/model/table-model';
 import { NgxSpinnerService } from 'ngx-spinner';
 import 'rxjs/Rx';
-import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
-
 
 export interface PeriodicElement {
   iterationcount: number;

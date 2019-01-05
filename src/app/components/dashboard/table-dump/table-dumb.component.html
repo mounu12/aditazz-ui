@@ -9,22 +9,22 @@
         <td mat-footer-cell *matFooterCellDef> Total </td>   
     </ng-container>
     <ng-container matColumnDef="equipments">
-        <th mat-header-cell *matHeaderCellDef> Equipment </th>
+        <th mat-header-cell *matHeaderCellDef> Num.Equipment </th>
         <td mat-cell *matCellDef="let element"> {{element.equipments}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.equipments}} </td>
     </ng-container>
     <ng-container matColumnDef="lines">
-        <th mat-header-cell *matHeaderCellDef> No. of Pipes </th>
+        <th mat-header-cell *matHeaderCellDef> Num.Pipes </th>
         <td mat-cell *matCellDef="let element"> {{element.lines}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.lines}}</td>
     </ng-container>
     <ng-container matColumnDef="numberOfObjects">
-        <th mat-header-cell *matHeaderCellDef> No. of Objects </th>
+        <th mat-header-cell *matHeaderCellDef> Num.Objects </th>
         <td mat-cell *matCellDef="let element"> {{element.numberOfObjects}} </td>
         <td mat-footer-cell *matFooterCellDef>{{totalobj.numberOfObjects}} </td>
     </ng-container>
     <ng-container matColumnDef="numberOfRulesChecked">
-        <th mat-header-cell *matHeaderCellDef> No. of Equivalency Rules checked </th>
+        <th mat-header-cell *matHeaderCellDef> Num.Equivalency Rules Checked </th>
         <td mat-cell *matCellDef="let element"> {{element.numberOfRulesChecked}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.numberOfRulesChecked}} </td>
     </ng-container>
@@ -34,12 +34,12 @@
         <td mat-footer-cell *matFooterCellDef>{{totalobj.equivalency}}</td>
     </ng-container>
     <ng-container matColumnDef="isTimedOut">
-        <th mat-header-cell *matHeaderCellDef> Time Out (Y/N) </th>
+        <th mat-header-cell *matHeaderCellDef> Timed Out (Y/N) </th>
         <td mat-cell *matCellDef="let element"> {{element.isTimedOut}} </td>
         <td mat-footer-cell *matFooterCellDef>{{totalobj.isTimedOut}}</td>
     </ng-container>
     <ng-container matColumnDef="equipmentPlacementTime">
-        <th mat-header-cell *matHeaderCellDef> Equipment Placement Time (Sec) </th>
+        <th mat-header-cell *matHeaderCellDef> Equipment Placement Time (Secs) </th>
         <td mat-cell *matCellDef="let element"> {{element.equipmentPlacementTime}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.equipmentPlacementTime | number}} </td>
     </ng-container>
@@ -49,7 +49,7 @@
         <td mat-footer-cell *matFooterCellDef> {{totalobj.pipeRouterTime}} </td>
     </ng-container>
     <ng-container matColumnDef="equivalencyVerifiedTime">
-        <th mat-header-cell *matHeaderCellDef>Equivalency (Check Time Secs)</th>
+        <th mat-header-cell *matHeaderCellDef>Equivalency Check Time (Secs)</th>
         <td mat-cell *matCellDef="let element"> {{element.equivalencyVerifiedTime}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.equivalencyVerifiedTime}} </td>
     </ng-container>
