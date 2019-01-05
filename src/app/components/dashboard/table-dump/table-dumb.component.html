@@ -9,28 +9,28 @@
         <td mat-footer-cell *matFooterCellDef> Total </td>   
     </ng-container>
     <ng-container matColumnDef="equipments">
-        <th mat-header-cell *matHeaderCellDef> Num.Equipment </th>
+        <th mat-header-cell *matHeaderCellDef> Num. Equipment </th>
         <td mat-cell *matCellDef="let element"> {{element.equipments}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.equipments}} </td>
     </ng-container>
     <ng-container matColumnDef="lines">
-        <th mat-header-cell *matHeaderCellDef> Num.Pipes </th>
+        <th mat-header-cell *matHeaderCellDef> Num. Pipes </th>
         <td mat-cell *matCellDef="let element"> {{element.lines}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.lines}}</td>
     </ng-container>
     <ng-container matColumnDef="numberOfObjects">
-        <th mat-header-cell *matHeaderCellDef> Num.Objects </th>
+        <th mat-header-cell *matHeaderCellDef> Num. Objects </th>
         <td mat-cell *matCellDef="let element"> {{element.numberOfObjects}} </td>
         <td mat-footer-cell *matFooterCellDef>{{totalobj.numberOfObjects}} </td>
     </ng-container>
     <ng-container matColumnDef="numberOfRulesChecked">
-        <th mat-header-cell *matHeaderCellDef> Num.Equivalency Rules Checked </th>
+        <th mat-header-cell *matHeaderCellDef> Num. Equivalency Rules Checked </th>
         <td mat-cell *matCellDef="let element"> {{element.numberOfRulesChecked}} </td>
         <td mat-footer-cell *matFooterCellDef> {{totalobj.numberOfRulesChecked}} </td>
     </ng-container>
     <ng-container matColumnDef="equivalency">
         <th mat-header-cell *matHeaderCellDef> Equivalency (Y/N)</th>
-        <td mat-cell *matCellDef="let element"> {{element.equivalency}} </td>
+        <td mat-cell *matCellDef="let element"> <label (click)="showEquivalencyText(element.equivalencyStatus)">{{element.equivalency}}</label> </td>
         <td mat-footer-cell *matFooterCellDef>{{totalobj.equivalency}}</td>
     </ng-container>
     <ng-container matColumnDef="isTimedOut">

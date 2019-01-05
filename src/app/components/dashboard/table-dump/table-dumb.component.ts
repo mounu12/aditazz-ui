@@ -89,8 +89,12 @@ export class TableDumpComponent implements OnInit {
       this.greetings = [];
     }
   }
+  showEquivalencyText(message:any){
+    alert(message);
+  }
+
   showGreeting(message) {
-    if(message.total == true) {
+    if(message.total == true) { 
       this.isExpansionDetailRow = false;
       this.totalobj = message.results[0];
     } else
