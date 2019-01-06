@@ -83,6 +83,7 @@ export class TableDumpComponent implements OnInit {
   }
   dispatchTabChangeEvent(){
     this.dataSource = new BehaviorSubject([]);
+    this.totalobj = {};
     this.isExpansionDetailRow = true;
     this.emitTabChangeEvent.emit(0);
   }
