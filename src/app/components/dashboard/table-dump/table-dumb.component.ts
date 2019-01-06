@@ -82,6 +82,8 @@ export class TableDumpComponent implements OnInit {
     // }
   }
   dispatchTabChangeEvent(){
+    this.dataSource = new BehaviorSubject([]);
+    this.isExpansionDetailRow = true;
     this.emitTabChangeEvent.emit(0);
   }
   setConnected(connected: boolean) {
