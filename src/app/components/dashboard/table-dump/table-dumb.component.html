@@ -91,6 +91,6 @@
     
 </table>
 <mat-progress-bar *ngIf="isExpansionDetailRow" mode="indeterminate"></mat-progress-bar>
-<div class="text-center pt20">
+<div class="text-center pt20" *ngIf="!isExpansionDetailRow">
     <button class="adi-btn" (click)="dispatchTabChangeEvent()">Run New Test</button>
 </div>
