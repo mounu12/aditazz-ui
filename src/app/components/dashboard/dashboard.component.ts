@@ -44,10 +44,16 @@ export class DashboardComponent implements OnInit {
 
   dispatchTabChangeEvent(index){
     this.tabGroup.selectedIndex = index;
+    
+    if(index == 0) {
+      this.nodedata = null;
+    }
   }
 
-  exportToCsv(){
-    new Angular5Csv(this.tableComp.dataSource, 'My Report');
+  exportCsv(){
+    this.tableComp.exportTableToCSV();
+    // new Angular5Csv(this.tableComp.dataSource, 'My Report');
+    // console.log(JSON.stringify(this.tableComp.dataSource.value));
   }
 
   postNodeValue(testnodes): void{

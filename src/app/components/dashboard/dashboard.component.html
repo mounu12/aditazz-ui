@@ -6,7 +6,8 @@
         <div class="tab-icons">
             <img src="../../../assets/images/trigger-vertical-medium.svg" />
             <img src="../../../assets/images/search-medium.svg" />
-            <img (click)="exportToCsv()" src="../../../assets/images/save-medium.svg" />
+            <img (click)="exportCsv()" src="../../../assets/images/save-medium.svg" *ngIf="nodedata" style="cursor:pointer" />
+
         </div>
         <mat-tab-group>
             <mat-tab label="Inputs" #tab [disabled]='!tab.isActive'>

@@ -1,6 +1,4 @@
-<!-- <div >
-        <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="small" color="#2867FA" type="ball-clip-rotate"></ngx-spinner>
-</div> -->
+<div #TABLE>
 <!-- <mat-progress-bar mode="query"></mat-progress-bar> -->
 <table mat-table [dataSource]="dataSource" class="adi-table">
     <ng-container matColumnDef="iterationcount">
@@ -90,7 +88,8 @@
     <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
     
 </table>
+</div>
 <mat-progress-bar *ngIf="isExpansionDetailRow" mode="indeterminate"></mat-progress-bar>
-<div class="text-center pt20" *ngIf="!isExpansionDetailRow">
-    <button class="adi-btn" (click)="dispatchTabChangeEvent()">Run New Test</button>
+<div class="text-center pt20" >
+    <button class="mat-raised-button adi-btn" [disabled]="isExpansionDetailRow" (click)="dispatchTabChangeEvent()">Run New Test</button>
 </div>

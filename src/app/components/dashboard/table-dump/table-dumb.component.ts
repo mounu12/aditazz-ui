@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef,ViewChild, ElementRef } from '@angular/core';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 import { BehaviorSubject } from 'rxjs'
 import  TableModel from 'src/app/model/table-model';
 import { NgxSpinnerService } from 'ngx-spinner';
 import 'rxjs/Rx';
+import * as XLSX from 'xlsx';
 
 export interface PeriodicElement {
   iterationcount: number;
@@ -37,10 +38,12 @@ export class TableDumpComponent implements OnInit {
   private stompClient = null;
   greetings: string[] = [];
   isExpansionDetailRow = true;//(i: number, row: Object) => row.hasOwnProperty('detailRow');;
+  @ViewChild('TABLE') table: ElementRef;
   constructor(private ref: ChangeDetectorRef,private spinner: NgxSpinnerService) { }
   @Input() testdata: any;
   @Input() username:any;
   @Output() emitTabChangeEvent = new EventEmitter();
+  
   tableData:TableModel;
   loading:boolean =  true;
   ngOnInit() {
@@ -151,4 +154,17 @@ export class TableDumpComponent implements OnInit {
     }
     return str;
   }
+
+  exportTableToCSV() {
+    
+      const ws: XLSX.WorkSheet=XLSX.utils.table_to_sheet(this.table.nativeElement);
+      (this.table.nativeElement);
+      const wb: XLSX.WorkBook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+      
+      /* save to file */
+      XLSX.writeFile(wb, 'Tabledata.csv');
+    
+  }
+  
 }
