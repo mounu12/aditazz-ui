@@ -14,6 +14,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { TableDumpComponent } from './components/dashboard/table-dump/table-dumb.component';
 import { ConfimationDialogComponent } from './shared/confimation-dialog/confimation-dialog.component';
 import { ErrorMsgComponent } from './shared/error-msg/error-msg.component';
+import { GraphDumbComponent } from './components/dashboard/graph-dumb/graph-dumb.component';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { ErrorMsgComponent } from './shared/error-msg/error-msg.component';
     TableDumpComponent,
     ConfimationDialogComponent,
     ErrorMsgComponent,
+    GraphDumbComponent,
   ],
   entryComponents: [
     ConfimationDialogComponent,
@@ -38,7 +41,8 @@ import { ErrorMsgComponent } from './shared/error-msg/error-msg.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxChartsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -6,6 +6,7 @@ import  TableModel from 'src/app/model/table-model';
 import { NgxSpinnerService } from 'ngx-spinner';
 import 'rxjs/Rx';
 import * as XLSX from 'xlsx';
+import { GraphDumbComponent } from '../graph-dumb/graph-dumb.component';
 
 export interface PeriodicElement {
   iterationcount: number;
@@ -39,11 +40,14 @@ export class TableDumpComponent implements OnInit {
   greetings: string[] = [];
   isExpansionDetailRow = true;//(i: number, row: Object) => row.hasOwnProperty('detailRow');;
   @ViewChild('TABLE') table: ElementRef;
+  @ViewChild(GraphDumbComponent) graphComp: ElementRef;
+
   constructor(private ref: ChangeDetectorRef,private spinner: NgxSpinnerService) { }
   @Input() testdata: any;
   @Input() username:any;
   @Output() emitTabChangeEvent = new EventEmitter();
-  
+  @Output() emitloadGraphDataEvent = new EventEmitter();
+
   tableData:TableModel;
   loading:boolean =  true;
   ngOnInit() {
@@ -56,7 +60,7 @@ export class TableDumpComponent implements OnInit {
   }
   ngOnChanges() {
     if(this.loading){
-      const socket = new SockJS('http://3.84.150.172:8080/aditazz-endpoint');
+      const socket = new SockJS('http://192.168.1.27:8080/aditazz-endpoint');
       this.stompClient = Stomp.over(socket);
       const _this = this;
       this.stompClient.connect({}, function (frame) {
@@ -71,6 +75,11 @@ export class TableDumpComponent implements OnInit {
       });
       this.loading = false;
     }
+
+    // this.graphComp.single[0].series.push({"name": String(15), "value": Math.floor(20.34)});
+    // this.graphComp.single[0].series.push({"name": String(5), "value": Math.floor(10.34)});
+    // this.graphComp.single[0].series.push({"name": String(25), "value": Math.floor(45.22)});
+
    
     // alert(this.username);
     // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:1,equipments:2}]);
@@ -103,9 +112,11 @@ export class TableDumpComponent implements OnInit {
     if(message.total == true) { 
       this.isExpansionDetailRow = false;
       this.totalobj = message.results[0];
-    } else
-    this.dataSource.next([...this.dataSource.getValue(), message.results[0]]);
-    console.log(this.totalobj);
+    } else{
+      this.dataSource.next([...this.dataSource.getValue(), message.results[0]]);
+      this.emitloadGraphDataEvent.emit(message.results[0]);
+    }
+   
   }
   showUpdatedLibrary(outputMessage){
     this.downloadOutputText(outputMessage,"updateLibrary.txt");

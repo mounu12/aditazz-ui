@@ -6,7 +6,7 @@ import { MatTabGroup } from '@angular/material';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ErrorMsgComponent } from 'src/app/shared/error-msg/error-msg.component';
 import { TableDumpComponent } from './table-dump/table-dumb.component';
-import { Angular5Csv } from 'angular5-csv/Angular5-csv';
+import { GraphDumbComponent } from './graph-dumb/graph-dumb.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +16,7 @@ import { Angular5Csv } from 'angular5-csv/Angular5-csv';
 export class DashboardComponent implements OnInit {
   @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
   @ViewChild(TableDumpComponent) tableComp: TableDumpComponent;
+  @ViewChild(GraphDumbComponent) graphComp: GraphDumbComponent;
   nodedata: any[];
   dialogueRef: MatDialogRef<ConfimationDialogComponent>;
   private stompClient = null;
@@ -84,4 +85,9 @@ export class DashboardComponent implements OnInit {
       });
     });
   }
+
+  loadGraphData(data){
+    this.graphComp.loadData(data);
+  }
+
 }

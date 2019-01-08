@@ -11,12 +11,14 @@
         </div>
         <mat-tab-group>
             <mat-tab label="Inputs" #tab [disabled]='!tab.isActive'>
-                <app-input-dump (postNodeValues)="postNodeValue($event)"></app-input-dump>
+                <app-input-dump  (postNodeValues)="postNodeValue($event)"></app-input-dump>
             </mat-tab>
             <mat-tab label="Tables" #tab [disabled]='!tab.isActive'>
-                <app-table-dump [username]="username" (emitTabChangeEvent)="dispatchTabChangeEvent($event)"></app-table-dump>
+                <app-table-dump [username]="username" (emitloadGraphDataEvent)="loadGraphData($event)" (emitTabChangeEvent)="dispatchTabChangeEvent($event)"></app-table-dump>
             </mat-tab>
-            <mat-tab label="Graphs" #tab [disabled]='!tab.isActive'> Content 3 </mat-tab>
+            <mat-tab label="Graphs"> 
+                <app-graph-dumb></app-graph-dumb>
+            </mat-tab>
         </mat-tab-group>
     </div>
 </div>
