@@ -33,15 +33,7 @@ export class GraphDumbComponent implements OnInit {
   
   constructor() {
   }
-  
-  onSelect(event) {
-    console.log(event);
-  }
-
-  testtick(){
-    return "test";
-  }
-
+ 
   ngOnInit() {
   }
 
