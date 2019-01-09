@@ -59,12 +59,8 @@ export class TableDumpComponent implements OnInit {
       const _this = this;
       this.stompClient.connect({}, function (frame) {
         _this.setConnected(true);
-        console.log('Connected: ' + frame);
-        console.log("socket url     :"+'/data/tableData/'+_this.username)
         _this.stompClient.subscribe('/data/tableData/'+_this.username, function (hello) {
-          //_this.showGreeting(hello.body);
-          // alert(hello.body);
-          _this.showGreeting(JSON.parse(hello.body));
+        _this.showGreeting(JSON.parse(hello.body));
         });
       });
       this.loading = false;

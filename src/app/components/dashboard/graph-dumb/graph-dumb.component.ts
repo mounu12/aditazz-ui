@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import { scaleLinear, scaleTime, scalePoint } from 'd3-scale';
 import { curveLinear } from 'd3-shape';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-graph-dumb',
@@ -61,10 +62,12 @@ export class GraphDumbComponent implements OnInit {
   
   constructor() {
   }
- 
+  @Output() emitTabChangeEvent = new EventEmitter();
   ngOnInit() {
   }
-
+  dispatchTabChangeEvent(){
+    this.emitTabChangeEvent.emit(0);
+  }
   loadData(message){
     // this.tempArray_line1 = [{
     //   name: 'TimevsObject',

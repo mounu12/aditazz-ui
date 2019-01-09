@@ -16,8 +16,8 @@
             <mat-tab label="Tables" #tab [disabled]='!tab.isActive'>
                 <app-table-dump [username]="username" (emitloadGraphDataEvent)="loadGraphData($event)" (emitTabChangeEvent)="dispatchTabChangeEvent($event)"></app-table-dump>
             </mat-tab>
-            <mat-tab label="Graphs"> 
-                <app-graph-dumb></app-graph-dumb>
+            <mat-tab label="Graphs" #tab [disabled]='!nodedata'> 
+                <app-graph-dumb (emitTabChangeEvent)="dispatchTabChangeEvent($event)"></app-graph-dumb>
             </mat-tab>
         </mat-tab-group>
     </div>
