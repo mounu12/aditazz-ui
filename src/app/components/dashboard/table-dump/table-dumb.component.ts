@@ -51,13 +51,7 @@ export class TableDumpComponent implements OnInit {
   tableData:TableModel;
   loading:boolean =  true;
   ngOnInit() {
-    //console.log(this.testdata);
-    // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:1,equipments:2}]);
-    // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:2,equipments:3}]);
-    //3.84.150.172
-   
-   
-  }
+}
   ngOnChanges() {
     if(this.loading){
       const socket = new SockJS('http://192.168.1.21:8080/aditazz-endpoint');
@@ -75,23 +69,6 @@ export class TableDumpComponent implements OnInit {
       });
       this.loading = false;
     }
-
-    // this.graphComp.single[0].series.push({"name": String(15), "value": Math.floor(20.34)});
-    // this.graphComp.single[0].series.push({"name": String(5), "value": Math.floor(10.34)});
-    // this.graphComp.single[0].series.push({"name": String(25), "value": Math.floor(45.22)});
-
-   
-    // alert(this.username);
-    // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:1,equipments:2}]);
-    // this.dataSource.next([...this.dataSource.getValue(), {iterationcount:2,equipments:3,detailRow:true}]);
-    // this.dataSource = this.tempSource;
-    // console.log(this.testdata);
-    // this.dataSource = this.testdata;
-    // if ( this.testdata) {
-    //   this.totalobj = this.testdata[this.testdata.length-1];
-    //   console.log(this.totalobj);
-    //   this.dataSource.splice(-1,1)
-    // }
   }
   dispatchTabChangeEvent(){
     this.dataSource = new BehaviorSubject([]);
@@ -129,12 +106,16 @@ export class TableDumpComponent implements OnInit {
   showPlanJson(outputMessage){
     this.downloadOutputText(outputMessage,"planJson.txt");
   }
+  showTextJson(outputMessage){
+    this.downloadOutputText(outputMessage,"textJson.txt");
+  }
+
 
   downloadOutputText(outputMessage, filename){
     var a = document.createElement("a");
     a.setAttribute('style', 'display:none;');
     document.body.appendChild(a);
-    var blob = new Blob([outputMessage], { type: 'text' });
+    var blob = new Blob([outputMessage], { type: 'application/json' });
     var url= window.URL.createObjectURL(blob);
     a.href = url;
     a.download = filename;
@@ -167,15 +148,11 @@ export class TableDumpComponent implements OnInit {
   }
 
   exportTableToCSV() {
-    
       const ws: XLSX.WorkSheet=XLSX.utils.table_to_sheet(this.table.nativeElement);
       (this.table.nativeElement);
       const wb: XLSX.WorkBook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-      
       /* save to file */
       XLSX.writeFile(wb, 'Tabledata.csv');
-    
   }
-  
 }
