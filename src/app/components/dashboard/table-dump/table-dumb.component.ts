@@ -6,6 +6,7 @@ import  TableModel from 'src/app/model/table-model';
 import { NgxSpinnerService } from 'ngx-spinner';
 import 'rxjs/Rx';
 import * as XLSX from 'xlsx';
+import { GraphDumbComponent } from '../graph-dumb/graph-dumb.component';
 
 export interface PeriodicElement {
   iterationcount: number;
@@ -39,11 +40,14 @@ export class TableDumpComponent implements OnInit {
   greetings: string[] = [];
   isExpansionDetailRow = true;//(i: number, row: Object) => row.hasOwnProperty('detailRow');;
   @ViewChild('TABLE') table: ElementRef;
+  @ViewChild(GraphDumbComponent) graphComp: ElementRef;
+
   constructor(private ref: ChangeDetectorRef,private spinner: NgxSpinnerService) { }
   @Input() testdata: any;
   @Input() username:any;
   @Output() emitTabChangeEvent = new EventEmitter();
-  
+  @Output() emitloadGraphDataEvent = new EventEmitter();
+
   tableData:TableModel;
   loading:boolean =  true;
   ngOnInit() {
@@ -85,9 +89,11 @@ export class TableDumpComponent implements OnInit {
     if(message.total == true) { 
       this.isExpansionDetailRow = false;
       this.totalobj = message.results[0];
-    } else
-    this.dataSource.next([...this.dataSource.getValue(), message.results[0]]);
-    console.log(this.totalobj);
+    } else{
+      this.dataSource.next([...this.dataSource.getValue(), message.results[0]]);
+      this.emitloadGraphDataEvent.emit(message.results[0]);
+    }
+   
   }
   showUpdatedLibrary(outputMessage){
     this.downloadOutputText(outputMessage,"updateLibrary.txt");

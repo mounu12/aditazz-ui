@@ -21,10 +21,11 @@ body {
 }
 
 .mat-tab-body-content {
-    height: calc(100vh - 370px)!important;
+    height: calc(100vh - 240px)!important;
     overflow: auto;
     padding: 45px 35px;
     position: relative;
+   
 }
 
 .mat-form-field-infix {
@@ -103,7 +104,7 @@ body {
     th.mat-header-cell {
         width: 8.333333333333333%;
         text-align: center !important;
-        padding: 13px 10px;
+        padding: 13px 8px;
         opacity: 1;
         color: #000;
         background-color: $table-color;
