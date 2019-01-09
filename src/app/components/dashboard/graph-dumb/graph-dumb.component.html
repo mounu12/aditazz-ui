@@ -1,19 +1,83 @@
-<p>
-  Number of Objects vs. Time(Mins)
-</p>
-
-<ngx-charts-line-chart
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="single"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-      [autoScale]="autoScale"
-      [showGridLines] = "false"
-      (select)="onSelect($event)">
+<div class="flex">
+  <div>
+    <p>
+      Number of Objects vs. Time(Mins)
+    </p>
+    <ngx-charts-line-chart
+          [view]="view"
+          [scheme]="colorScheme_line1"
+          [results]="single_line1"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel_line1"
+          [yAxisLabel]="yAxisLabel"
+          [autoScale]="autoScale"
+          [showGridLines] = "true"
+          [curve]="curve"
+          (select)="onSelect($event)">
     </ngx-charts-line-chart>
+  </div>
+  <div>
+      <p>
+          Number of Objects vs. Throughput(O*R/sec)
+      </p>
+  <ngx-charts-line-chart
+        [view]="view"
+        [scheme]="colorScheme_line2"
+        [results]="single_line2"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel_line2"
+        [yAxisLabel]="yAxisLabel"
+        [autoScale]="autoScale"
+        [showGridLines] = "true"
+        [curve]="curve"
+        (select)="onSelect($event)">
+  </ngx-charts-line-chart>
+</div>
+<div>
+    <p>
+        Equipment Number vs. Placement Time(Secs)
+      </p>
+  <ngx-charts-line-chart
+        [view]="view"
+        [scheme]="colorScheme_line3"
+        [results]="single_line3"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel_line3"
+        [yAxisLabel]="yAxisLabel"
+        [autoScale]="autoScale"
+        [showGridLines] = "true"
+        [curve]="curve"
+        (select)="onSelect($event)">
+  </ngx-charts-line-chart>
+</div>
+<div>
+    <p>
+        Number of Pipes vs. Routing Time(Secs)
+      </p>
+  <ngx-charts-line-chart
+        [view]="view"
+        [scheme]="colorScheme_line4"
+        [results]="single_line4"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel_line4"
+        [yAxisLabel]="yAxisLabel"
+        [autoScale]="autoScale"
+        [showGridLines] = "true"
+        [curve]="curve"
+        [roundEdges] = "true"
+        (select)="onSelect($event)">
+  </ngx-charts-line-chart>
+  </div>
+</div>
