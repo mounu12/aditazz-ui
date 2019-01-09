@@ -52,8 +52,6 @@ export class DashboardComponent implements OnInit {
 
   exportCsv(){
     this.tableComp.exportTableToCSV();
-    // new Angular5Csv(this.tableComp.dataSource, 'My Report');
-    // console.log(JSON.stringify(this.tableComp.dataSource.value));
   }
 
   postNodeValue(testnodes): void{
