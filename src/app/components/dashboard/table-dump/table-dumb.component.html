@@ -28,7 +28,7 @@
     </ng-container>
     <ng-container matColumnDef="equivalency">
         <th mat-header-cell *matHeaderCellDef> Equivalency (Y/N)</th>
-        <td mat-cell *matCellDef="let element"> <label (click)="showEquivalencyText(element.equivalencyStatus)">{{element.equivalency}}</label> </td>
+        <td mat-cell *matCellDef="let element"> {{element.equivalency}} </td>
         <td mat-footer-cell *matFooterCellDef>{{totalobj.equivalency}}</td>
     </ng-container>
     <ng-container matColumnDef="isTimedOut">
@@ -79,7 +79,7 @@
 
                     </td>
                     <td>
-                        <button matTooltip="Text Json" (click)="showTextJson(element.serverLog)"><img src="../../../../assets/images/log-text.svg"/></button>
+                        <button matTooltip="Server Log" (click)="showTextJson(element.serverLog)"><img src="../../../../assets/images/log-text.svg"/></button>
             
                     </td>
                 </tr>

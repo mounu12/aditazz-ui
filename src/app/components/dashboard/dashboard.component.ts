@@ -7,6 +7,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ErrorMsgComponent } from 'src/app/shared/error-msg/error-msg.component';
 import { TableDumpComponent } from './table-dump/table-dumb.component';
 import { GraphDumbComponent } from './graph-dumb/graph-dumb.component';
+import { BehaviorSubject } from 'rxjs'
 
 @Component({
   selector: 'app-dashboard',
@@ -44,6 +45,9 @@ export class DashboardComponent implements OnInit {
  
 
   dispatchTabChangeEvent(index){
+    this.tableComp.dataSource = new BehaviorSubject([]);
+    this.tableComp.totalobj = {};
+    this.tableComp.isExpansionDetailRow = true;
     this.tabGroup.selectedIndex = index;
     
     if(index == 0) {

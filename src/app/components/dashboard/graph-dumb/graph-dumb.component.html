@@ -13,9 +13,13 @@
           [showYAxisLabel]="showYAxisLabel"
           [xAxisLabel]="xAxisLabel_line1"
           [yAxisLabel]="yAxisLabel"
-          [autoScale]="autoScale"
           [showGridLines] = "true"
           [curve]="curve"
+          [yScaleMin] = 0
+          [xScaleMin] = 0
+          [yScaleMax] = "yScaleMax_line1"
+          [xScaleMax] = "xScaleMax_line1"
+          [roundDomains] = "true"
           (select)="onSelect($event)">
     </ngx-charts-line-chart>
   </div>
@@ -33,9 +37,13 @@
         [showYAxisLabel]="showYAxisLabel"
         [xAxisLabel]="xAxisLabel_line2"
         [yAxisLabel]="yAxisLabel"
-        [autoScale]="autoScale"
         [showGridLines] = "true"
+        [yScaleMin] = 0
+        [xScaleMin] = 0
+        [yScaleMax] = "yScaleMax_line2"
+        [xScaleMax] = "xScaleMax_line2"
         [curve]="curve"
+        [roundDomains] = "true"
         (select)="onSelect($event)">
   </ngx-charts-line-chart>
 </div>
@@ -53,9 +61,13 @@
         [showYAxisLabel]="showYAxisLabel"
         [xAxisLabel]="xAxisLabel_line3"
         [yAxisLabel]="yAxisLabel"
-        [autoScale]="autoScale"
         [showGridLines] = "true"
         [curve]="curve"
+        [yScaleMin] = 0
+        [xScaleMin] = 0
+        [yScaleMax] = "yScaleMax_line3"
+        [xScaleMax] = "xScaleMax_line3"
+        [roundDomains] = "true"
         (select)="onSelect($event)">
   </ngx-charts-line-chart>
 </div>
@@ -73,10 +85,14 @@
         [showYAxisLabel]="showYAxisLabel"
         [xAxisLabel]="xAxisLabel_line4"
         [yAxisLabel]="yAxisLabel"
-        [autoScale]="autoScale"
         [showGridLines] = "true"
         [curve]="curve"
         [roundEdges] = "true"
+        [yScaleMin] = 0
+        [xScaleMin] = 0
+        [yScaleMax] = "yScaleMax_line4"
+        [xScaleMax] = "xScaleMax_line4"
+        [roundDomains] = "true"
         (select)="onSelect($event)">
   </ngx-charts-line-chart>
   </div>

@@ -13,6 +13,5 @@ export class TestService {
     return this.httpClient.put('http://192.168.1.21:8080/report/generateStatistics', testnodes).pipe(map((res: Response) => {
       return res;
     }));
-    
   }
 }
