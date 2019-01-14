@@ -23,6 +23,11 @@ export interface PeriodicElement {
   throughput: number;
 }
 
+export interface Actions {
+  value: string;
+  viewValue: string;
+}
+
 const ELEMENT_DATA: PeriodicElement[] = [];
 
 @Component({
@@ -41,7 +46,12 @@ export class TableDumpComponent implements OnInit {
   isExpansionDetailRow = true;//(i: number, row: Object) => row.hasOwnProperty('detailRow');;
   @ViewChild('TABLE') table: ElementRef;
   @ViewChild(GraphDumbComponent) graphComp: ElementRef;
-
+  actions: Actions[] = [
+    {value: 'update library', viewValue: 'Updated Library'},
+    {value: 'pfd json', viewValue: 'PFD Json'},
+    {value: 'plan json', viewValue: 'Plan Json'},
+    {value: 'server log', viewValue: 'Log'}
+  ];
   constructor(private ref: ChangeDetectorRef,private spinner: NgxSpinnerService) { }
   @Input() testdata: any;
   @Input() username:any;
@@ -51,10 +61,10 @@ export class TableDumpComponent implements OnInit {
   tableData:TableModel;
   loading:boolean =  true;
   ngOnInit() {
-}
+  }
   ngOnChanges() {
     if(this.loading){
-      const socket = new SockJS('http://192.168.1.21:8080/aditazz-endpoint');
+      const socket = new SockJS('http://3.84.150.172:8080/aditazz-endpoint');
       this.stompClient = Stomp.over(socket);
       const _this = this;
       this.stompClient.connect({}, function (frame) {
@@ -91,19 +101,40 @@ export class TableDumpComponent implements OnInit {
     }
    
   }
+
+  startDownload(downloadType:any, actionsMessage:any){
+    switch (downloadType) {
+      case 'update library':
+        this.showUpdatedLibrary(actionsMessage.updatedLib);
+        break;
+      case 'pfd json':
+        this.showPfdJson(actionsMessage.pfdObject);
+        break;
+      case 'plan json':
+        this.showPlanJson(actionsMessage.planObject);
+        break;
+      case 'server log':
+        this.showTextJson(actionsMessage.serverLog);
+        break;
+    
+      default:
+        break;
+    }
+  }
+
   showUpdatedLibrary(outputMessage){
-    this.downloadOutputText(outputMessage,"updateLibrary.txt");
+    this.downloadOutputText(outputMessage,"UpdatedLibrary.txt");
   }
   
   showPfdJson(outputMessage){
-    this.downloadOutputText(outputMessage,"pfdJson.txt");
+    this.downloadOutputText(outputMessage,"PFDJson.txt");
   }
 
   showPlanJson(outputMessage){
-    this.downloadOutputText(outputMessage,"planJson.txt");
+    this.downloadOutputText(outputMessage,"PlanJson.txt");
   }
   showTextJson(outputMessage){
-    this.downloadOutputText(outputMessage,"textJson.txt");
+    this.downloadOutputText(outputMessage,"Log.txt");
   }
 
 

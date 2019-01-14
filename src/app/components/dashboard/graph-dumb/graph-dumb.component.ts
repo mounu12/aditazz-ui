@@ -106,40 +106,18 @@ export class GraphDumbComponent implements OnInit {
     
   }
   
-  testFunc(){
-    var arr = [];
-    this.tempArray_line4.forEach(element => {
-      alert(element['value']);
-      arr.push(element['value']);
-    });
-    return arr;
-  }
-
   loadData(message: { numberOfObjects: any; totalElpsedTime: any; throughput: any; equipments: any; equipmentPlacementTime: any; lines: any; pipeRouterTime: any; }){
-    // this.tempArray_line1 = [{
-    //   name: 'TimevsObject',
-    //   series: []}];
     this.tempArray_line1[0].series.push({"name": String(message.numberOfObjects), "value": (message.totalElpsedTime)});
     this.single_line1 = [...this.tempArray_line1];
     this.setMaxXYScale_line(this.tempArray_line1[0].series,1);
-    // this.tempArray_line2 = [{
-    //   name: 'ThroughputvsObject',
-    //   series: []}];
     this.tempArray_line2[0].series.push({"name": String(message.numberOfObjects), "value": (message.throughput)})
     this.single_line2 = [...this.tempArray_line2];
     this.setMaxXYScale_line(this.tempArray_line2[0].series,2);
-    // this.tempArray_line3 = [{
-    //   name: 'EquipmentTimevsEquipment',
-    //   series: []}];
     this.tempArray_line3[0].series.push({"name": String(message.equipments), "value": (message.equipmentPlacementTime)})
     this.single_line3 = [...this.tempArray_line3];
     this.setMaxXYScale_line(this.tempArray_line3[0].series,3);
-    // this.tempArray_line4 = [{
-    //   name: 'PipeTimevsPipes',
-    //   series: []}];
     this.tempArray_line4[0].series.push({"name": String(message.lines), "value": (message.pipeRouterTime)})
     this.single_line4 = [...this.tempArray_line4];
     this.setMaxXYScale_line(this.tempArray_line4[0].series,4);
-
   }
 }

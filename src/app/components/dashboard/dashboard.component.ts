@@ -48,6 +48,18 @@ export class DashboardComponent implements OnInit {
     this.tableComp.dataSource = new BehaviorSubject([]);
     this.tableComp.totalobj = {};
     this.tableComp.isExpansionDetailRow = true;
+    this.graphComp.tempArray_line1 = [{
+      name: 'TimevsObject',
+      series: []}];
+    this.graphComp.tempArray_line2 = [{
+      name: 'ThroughputvsObject',
+      series: []}];
+    this.graphComp.tempArray_line3 = [{
+      name: 'EquipmentTimevsEquipment',
+      series: []}];
+    this.graphComp.tempArray_line4 = [{
+      name: 'PipeTimevsPipes',
+      series: []}];
     this.tabGroup.selectedIndex = index;
     
     if(index == 0) {

@@ -5,17 +5,18 @@ label {
     cursor: pointer;
     color: blue;
 }
+
 tr.mat-footer-row {
     font-weight: bold;
-  }
+}
 
-  .mat-table {
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: none;
-    mat-row:nth-child(even) {
-        background-color: #fdfdfd;
-        cursor: pointer;
-    }
+.mat-table {
+border: 1px solid rgba(0, 0, 0, 0.12);
+box-shadow: none;
+mat-row:nth-child(even) {
+    background-color: #fdfdfd;
+    cursor: pointer;
+}
     .output-section {
         table{
             td{
@@ -32,4 +33,9 @@ tr.mat-footer-row {
             }
         }
     }
+}
+
+.actionField{
+    width: 100px !important;
+    margin-top: 10px !important; 
 }
