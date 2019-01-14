@@ -64,7 +64,7 @@ export class TableDumpComponent implements OnInit {
   }
   ngOnChanges() {
     if(this.loading){
-      const socket = new SockJS('http://3.84.150.172:8080/aditazz-endpoint');
+      const socket = new SockJS('http://192.168.1.21:8080/aditazz-endpoint');
       this.stompClient = Stomp.over(socket);
       const _this = this;
       this.stompClient.connect({}, function (frame) {

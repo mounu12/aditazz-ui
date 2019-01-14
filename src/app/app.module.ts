@@ -16,6 +16,7 @@ import { ConfimationDialogComponent } from './shared/confimation-dialog/confimat
 import { ErrorMsgComponent } from './shared/error-msg/error-msg.component';
 import { GraphDumbComponent } from './components/dashboard/graph-dumb/graph-dumb.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatIconModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

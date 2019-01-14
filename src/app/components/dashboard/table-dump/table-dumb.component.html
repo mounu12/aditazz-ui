@@ -65,9 +65,10 @@
         <th mat-header-cell *matHeaderCellDef> Output Files </th>
         <td mat-cell *matCellDef="let element" class="output-section"> 
                 <mat-form-field class="actionField">
-                    <mat-select  placeholder="File Type" (selectionChange)="startDownload($event.value,element)">
-                        <mat-option *ngFor="let action of actions" [value]="action.value">
-                        {{action.viewValue}}
+                    <mat-select placeholder="File Type" (selectionChange)="startDownload($event.value,element)">
+                        <mat-option layout-align="space-between center" *ngFor="let action of actions" [value]="action.value">
+                        {{action.viewValue}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <mat-icon class="actionMatIcon">get_app</mat-icon>
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
