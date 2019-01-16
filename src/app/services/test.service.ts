@@ -10,7 +10,7 @@ export class TestService {
   constructor(private httpClient: HttpClient) { }
   
   postTestValues(testnodes) {
-    return this.httpClient.put('http://192.168.1.21:8080/report/generateStatistics', testnodes).pipe(map((res: Response) => {
+    return this.httpClient.put('http://3.84.150.172:8080/report/generateStatistics', testnodes).pipe(map((res: Response) => {
       return res;
     }));
   }
