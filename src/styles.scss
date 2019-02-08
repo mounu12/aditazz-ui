@@ -266,3 +266,19 @@ body {
 .mandatory{
     color: rgb(211, 11, 11);
 }
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #2867FA!important;
+    font-family: Roboto,"Helvetica Neue",sans-serif!important;
+}
+
+.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    background-color: #2867FA!important;
+    font-family: Roboto,"Helvetica Neue",sans-serif!important;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+    line-height: 24px;
+    font-family: Roboto,"Helvetica Neue",sans-serif!important;
+    color: #203145;
+    font-size: 12px;
+}

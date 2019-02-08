@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'home',
     component: DashboardComponent
   },
-  { path: '**', redirectTo: 'dashboard' },
+  // { path: '**', redirectTo: 'dashboard' },
 ]
 @NgModule({
   imports: [
