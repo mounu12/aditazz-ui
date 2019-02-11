@@ -49,7 +49,7 @@
       <section class="chk-section">
         <mat-checkbox class="" name="spacing" [(ngModel)]="testnodes.spacing" #spacing="ngModel">Disable randomizing the spacing table</mat-checkbox>
         <mat-checkbox class="-margin" name="route" [disabled]="testnodes.place"  [(ngModel)]="testnodes.route" #route="ngModel">Disable route</mat-checkbox>
-        <mat-checkbox class="-margin" name="place" (change)="checkRouteValue()" [(ngModel)]="testnodes.place" #place="ngModel">Disable place (route must be disabled if place is disabled)</mat-checkbox>
+        <mat-checkbox class="-margin" name="place" (change)="checkRouteValue()" [(ngModel)]="testnodes.place" #place="ngModel">Disable place (Route will be disable if Place is disabled)</mat-checkbox>
       </section>
 </div>
 </form>
