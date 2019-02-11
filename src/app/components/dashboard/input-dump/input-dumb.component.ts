@@ -43,10 +43,11 @@ export class InputDumpComponent implements OnInit {
       'incrementSize': this.testnodes.incrementSize,
       'iterationTimeLimit': this.testnodes.iterationTimeLimit,
       'overAllTimeLimit': this.testnodes.overAllTimeLimit,
-      'spacing': false,
-      'route': false,
-      'place': false
+      'spacing': true,
+      'route': true,
+      'place': true
     }
+    console.log(this.testObj);
   }
     if(this.debug) {
       if(this.testnodes.place = false) {
