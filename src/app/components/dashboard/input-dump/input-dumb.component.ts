@@ -33,6 +33,18 @@ export class InputDumpComponent implements OnInit {
       this.testnodes.place = false;
     } 
   }
+  checkRouteValue(){
+    if(this.testnodes.place == true) {
+      this.testnodes.route = true;
+    }
+  }
+
+  checkPlaceValue(){
+    if(this.testnodes.place == true) {
+      this.testnodes.route = true;
+    }
+  }
+
   runNewTest() {
     if(!this.debug) {
     this.testObj= {
@@ -43,16 +55,14 @@ export class InputDumpComponent implements OnInit {
       'incrementSize': this.testnodes.incrementSize,
       'iterationTimeLimit': this.testnodes.iterationTimeLimit,
       'overAllTimeLimit': this.testnodes.overAllTimeLimit,
-      'spacing': true,
-      'route': true,
-      'place': true
+      'spacing': false,
+      'route': false,
+      'place': false
     }
+     this.postNodeValues.emit(this.testObj);
     console.log(this.testObj);
   }
     if(this.debug) {
-      if(this.testnodes.place = false) {
-        this.testnodes.route = false;
-      }
       this.testObj= {
         'url': this.testnodes.url,
         'projectName': this.testnodes.projectName,
@@ -63,7 +73,7 @@ export class InputDumpComponent implements OnInit {
         'overAllTimeLimit': this.testnodes.overAllTimeLimit,
         'spacing': this.testnodes.spacing,
         'route': this.testnodes.route,
-        'place': this.testnodes.route
+        'place': this.testnodes.place
       }
     this.postNodeValues.emit(this.testObj);
     console.log(this.testObj);

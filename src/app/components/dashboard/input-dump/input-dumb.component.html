@@ -48,8 +48,8 @@
 <div class="flex flex-items" *ngIf="debug">
       <section class="chk-section">
         <mat-checkbox class="" name="spacing" [(ngModel)]="testnodes.spacing" #spacing="ngModel">Disable randomizing the spacing table</mat-checkbox>
-        <mat-checkbox class="-margin" name="route" [(ngModel)]="testnodes.route" #route="ngModel">Disable route</mat-checkbox>
-        <mat-checkbox class="-margin" name="place" [checked]="testnodes.route" [(ngModel)]="testnodes.place" #place="ngModel">Disable place (route must be disabled if place is disabled)</mat-checkbox>
+        <mat-checkbox class="-margin" name="route" [disabled]="testnodes.place"  [(ngModel)]="testnodes.route" #route="ngModel">Disable route</mat-checkbox>
+        <mat-checkbox class="-margin" name="place" (change)="checkRouteValue()" [(ngModel)]="testnodes.place" #place="ngModel">Disable place (route must be disabled if place is disabled)</mat-checkbox>
       </section>
 </div>
 </form>
